@@ -9,31 +9,29 @@ exports[`<Home /> renders correctly 1`] = `
     fluid={false}
   >
     <Hero
-      favorite={
-        Object {
-          "data": Array [
-            Object {
-              "additionalInfo": Array [],
-              "address": "Gandaria City, Lantai Upper Ground, Jl. Sultan Iskandar Muda, Gandaria, Jakarta",
-              "cover": "http://localhost:8080/assets/top-momoiro.jpg",
-              "cuisine": "Asian",
-              "id": 1,
-              "location": "Kota Kasablanka, Tebet, Jakarta",
-              "name": "Momoiro",
-              "openingHours": "10.00 - 22.00",
-              "phoneNumber": "08980780780",
-              "rating": 4.2,
-              "slides": Array [
-                "http://localhost:8080/assets/momoiro-1.jpg",
-                "http://localhost:8080/assets/momoiro-2.jpg",
-                "http://localhost:8080/assets/momoiro-3.jpg",
-              ],
-              "slug": "momoiro-kota-kasablanka",
-            },
-          ],
-          "loading": false,
-        }
+      data={
+        Array [
+          Object {
+            "additionalInfo": Array [],
+            "address": "Gandaria City, Lantai Upper Ground, Jl. Sultan Iskandar Muda, Gandaria, Jakarta",
+            "cover": "http://localhost:8080/assets/top-momoiro.jpg",
+            "cuisine": "Asian",
+            "id": 1,
+            "location": "Kota Kasablanka, Tebet, Jakarta",
+            "name": "Momoiro",
+            "openingHours": "10.00 - 22.00",
+            "phoneNumber": "08980780780",
+            "rating": 4.2,
+            "slides": Array [
+              "http://localhost:8080/assets/momoiro-1.jpg",
+              "http://localhost:8080/assets/momoiro-2.jpg",
+              "http://localhost:8080/assets/momoiro-3.jpg",
+            ],
+            "slug": "momoiro-kota-kasablanka",
+          },
+        ]
       }
+      loading={false}
     />
   </Grid>
 </div>

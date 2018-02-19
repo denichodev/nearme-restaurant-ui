@@ -12,7 +12,7 @@ class Main extends React.Component {
 
     return info.map((text, index) => {
       return (
-        <div key={index}>
+        <div className="addInfo" key={index}>
           <span>{text}</span>
           <span>
             <i className="fas fa-check" />
@@ -41,7 +41,7 @@ class Main extends React.Component {
     if (rating < 0.1) {
       return (
         <div className={s.mainRating} style={style}>
-          <span>NEW</span>
+          <span className={s.new}>NEW</span>
         </div>
       );
     }

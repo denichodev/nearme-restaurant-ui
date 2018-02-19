@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import result from 'lodash/result';
 import { object, arrayOf, string, bool, func, node } from 'prop-types';
 import { Helmet } from 'react-helmet';
 import Slider from 'react-slick';
@@ -14,10 +15,14 @@ import Main from './Main';
 import Info from './Info';
 
 import { getRestaurant } from '../../redux/restaurant/actions';
+import {
+  submitReservation,
+  reservationHideToaster,
+} from '../../redux/reservation/actions';
 import './datetime.css';
 import s from './styles.css';
 
-const Carousel = props => {
+export const Carousel = props => {
   const setting = {
     lazyLoad: true,
     infinite: false,
@@ -45,14 +50,15 @@ const Carousel = props => {
 
 Carousel.propTypes = {
   className: string,
-  children: node
-}
+  children: node,
+};
 
 export class Detail extends React.Component {
   state = {
     overlay: false,
+    disableSubmit: true,
     form: {
-      datetime: null,
+      checkIn: null,
       guest: 0,
     },
   };
@@ -62,23 +68,59 @@ export class Detail extends React.Component {
     getRestaurant(match.params.slug);
   }
 
+  componentDidUpdate() {
+    if (this.props.reservationToaster.show) {
+      setTimeout(() => {
+        this.props.reservationHideToaster();
+      }, 3000);
+    }
+  }
+
   get todayDate() {
     const yesterday = moment().subtract(1, 'day');
     return current => current.isAfter(yesterday);
   }
 
   handleChangeDate = val => {
-    this.setState({ form: { datetime: val.format('YYYY-MM-DD HH:mm:ss') } });
+    this.setState(
+      {
+        form: {
+          ...this.state.form,
+          checkIn: val.format('YYYY-MM-DD HH:mm:ss'),
+        },
+      },
+      () => {
+        this.validateForm();
+      },
+    );
   };
 
   handleChangeGuest = evt => {
-    this.setState({ form: { guest: evt.target.value } });
+    this.setState(
+      { form: { ...this.state.form, guest: +evt.target.value } },
+      () => {
+        this.validateForm();
+      },
+    );
+  };
+
+  validateForm = () => {
+    if (this.state.form.guest > 0 && this.state.form.checkIn !== '') {
+      this.setState({ disableSubmit: false });
+    }
   };
 
   handleSubmit = event => {
     event.preventDefault();
+    const data = {
+      ...this.state.form,
+      userId: this.props.userId || 1, // fake userId
+      restaurantId: this.props.restaurant.id,
+    };
 
-    console.log(this.state.form);
+    this.setState({ overlay: false, form: { checkIn: '', guest: 0 } }, () => {
+      this.props.submitReservation(data);
+    });
   };
 
   handleOverlay = () => {
@@ -86,7 +128,7 @@ export class Detail extends React.Component {
   };
 
   renderSlide = () => {
-    const slides = this.props.restaurant.slides || [];
+    const slides = this.props.restaurant.data.slides || [];
 
     return slides.map((s, i) => {
       return (
@@ -98,14 +140,14 @@ export class Detail extends React.Component {
   };
 
   render() {
-    const { loading, restaurant, errors } = this.props;
+    const { restaurant, reservation, reservationToaster } = this.props;
 
-    if (loading) {
-      return <div>Loading...</div>;
+    if (restaurant.loading) {
+      return <div className={s.loading}>Loading...</div>;
     }
 
-    if (errors.length) {
-      return <div>Errors</div>;
+    if (restaurant.errors.length) {
+      return <div className={s.errors}>Errors</div>;
     }
 
     return (
@@ -124,6 +166,12 @@ export class Detail extends React.Component {
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           />
         </Helmet>
+        {reservationToaster.show && (
+          <div className={s.toaster}>
+            <i className="fas fa-check" />
+            {reservationToaster.message}
+          </div>
+        )}
         <div className={s.mobileHeader}>
           <div className={s.backButton}>
             <button onClick={this.props.goBack}>
@@ -137,16 +185,16 @@ export class Detail extends React.Component {
             <Col xs={12} sm={12} md={8}>
               <div className={s.wrapper}>
                 <Main
-                  name={restaurant.name}
-                  rating={restaurant.rating}
-                  cuisine={restaurant.cuisine}
-                  additionalInfo={restaurant.additionalInfo}
+                  name={restaurant.data.name}
+                  rating={restaurant.data.rating}
+                  cuisine={restaurant.data.cuisine}
+                  additionalInfo={restaurant.data.additionalInfo}
                 />
                 <Info
-                  cuisine={restaurant.cuisine}
-                  phoneNumber={restaurant.phoneNumber}
-                  openingHours={restaurant.openingHours}
-                  address={restaurant.address}
+                  cuisine={restaurant.data.cuisine}
+                  phoneNumber={restaurant.data.phoneNumber}
+                  openingHours={restaurant.data.openingHours}
+                  address={restaurant.data.address}
                 />
               </div>
             </Col>
@@ -161,20 +209,29 @@ export class Detail extends React.Component {
                       isValidDate={this.todayDate}
                       input={false}
                       inputProps={{ placeholder: 'Select date and time...' }}
+                      value={this.state.form.checkIn}
                       onChange={this.handleChangeDate}
                     />
                   </div>
                   <div className={s.form}>
                     <input
+                      className="guest"
                       type="number"
                       placeholder="Total guest..."
+                      value={this.state.form.guest}
                       onChange={this.handleChangeGuest}
                     />
                     <div className={s.person}> person</div>
                   </div>
                   <div className={s.form}>
-                    <button className={s.reserve} onClick={this.handleSubmit}>
-                      Make a reservation
+                    <button
+                      className={s.reserve}
+                      onClick={this.handleSubmit}
+                      disabled={this.state.disableSubmit}
+                    >
+                      {reservation.loading
+                        ? 'Loading...'
+                        : 'Make a reservation'}
                     </button>
                   </div>
                 </div>
@@ -192,23 +249,25 @@ export class Detail extends React.Component {
 
 Detail.propTypes = {
   restaurant: object.isRequired,
-  loading: bool.isRequired,
-  errors: arrayOf(string),
   goBack: func.isRequired,
   getRestaurant: func.isRequired,
+  reservation: object,
+  reservationToaster: object,
 };
 
-const mapStateToProps = ({ restaurant }) => {
+const mapStateToProps = ({ restaurant, reservation }) => {
   return {
-    restaurant: restaurant.data,
-    loading: restaurant.loading,
-    errors: restaurant.errors,
+    restaurant: restaurant,
+    reservation: reservation,
+    reservationToaster: reservation.toaster,
   };
 };
 
 const mapDispatchToProps = {
   goBack,
   getRestaurant,
+  submitReservation,
+  reservationHideToaster,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);

@@ -59,7 +59,9 @@ exports[`<Hero /> renders correctly 1`] = `
     sm={12}
     xs={12}
   >
-    <Row />
+    <Row
+      className="topNineWrapper"
+    />
   </Col>
 </Row>
 `;

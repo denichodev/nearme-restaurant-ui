@@ -19,19 +19,24 @@ function checkStatus(response) {
 }
 
 export default function api(url, opts = {}) {
-  const baseURL = !url.includes('https')
-    ? API_HOST + url
-    : url
+  const baseURL = !url.includes('https') ? API_HOST + url : url;
+  const qs = !isEmpty(opts.qs) ? `?${stringify(opts.qs)}` : '';
+  const URL = !isEmpty(opts.qs) ? `${baseURL}${qs}` : baseURL;
 
-  let qs = !isEmpty(opts.qs)
-    ? `?${stringify(opts.qs)}`
-    : ''
-  
-  const URL = !isEmpty(opts.qs)
-    ? `${baseURL}${qs}`
-    : baseURL
+  const options = {
+    ...opts,
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json; charset=utf-8',
+      ...opts.headers,
+    }
+  }
 
-  return fetch(URL, opts)
+  if (opts.body) {
+    options.body = JSON.stringify(opts.body)
+  }
+
+  return fetch(URL, options)
     .then(checkStatus)
     .then(parseJSON)
     .catch(err => console.error(err));

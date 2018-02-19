@@ -7,7 +7,9 @@ exports[`<Main /> renders correctly 1`] = `
   <h1>
     Momoiro
   </h1>
-  <p />
+  <p>
+    Asian
+  </p>
   <div
     className="mainRating"
     style={

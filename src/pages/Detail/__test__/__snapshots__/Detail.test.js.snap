@@ -1,5 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Detail /> renders Carousel correctly 1`] = `
+<Slider
+  arrows={false}
+  className="gf-slide"
+  infinite={false}
+  lazyLoad={true}
+  responsive={
+    Array [
+      Object {
+        "breakpoint": 600,
+        "centerPadding": "0px",
+        "settings": Object {
+          "slidesToShow": 1,
+        },
+      },
+      Object {
+        "breakpoint": 1920,
+        "centerPadding": "0px",
+        "settings": Object {
+          "slidesToShow": 2,
+        },
+      },
+    ]
+  }
+>
+  <div>
+    <img
+      src="random.jpg"
+    />
+  </div>
+</Slider>
+`;
+
 exports[`<Detail /> renders correctly 1`] = `
 <div>
   <HelmetWrapper
@@ -36,7 +69,7 @@ exports[`<Detail /> renders correctly 1`] = `
       </button>
     </div>
   </div>
-  <Carousel
+  <Component
     className="slickSlider"
   >
     <div
@@ -63,7 +96,7 @@ exports[`<Detail /> renders correctly 1`] = `
         src="http://localhost:8080/assets/momoiro-3.jpg"
       />
     </div>
-  </Carousel>
+  </Component>
   <Grid
     className="detailPage"
     fluid={false}
@@ -132,15 +165,18 @@ exports[`<Detail /> renders correctly 1`] = `
                 timeConstraints={Object {}}
                 timeFormat={true}
                 utc={false}
+                value={null}
               />
             </div>
             <div
               className="form"
             >
               <input
+                className="guest"
                 onChange={[Function]}
                 placeholder="Total guest..."
                 type="number"
+                value={0}
               />
               <div
                 className="person"
@@ -153,6 +189,7 @@ exports[`<Detail /> renders correctly 1`] = `
             >
               <button
                 className="reserve"
+                disabled={true}
                 onClick={[Function]}
               >
                 Make a reservation

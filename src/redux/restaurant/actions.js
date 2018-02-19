@@ -3,22 +3,22 @@ import * as t from './constants';
 
 export function restaurantPending() {
   return {
-    type: t.RESTAURANT_PENDING
-  }
+    type: t.RESTAURANT_PENDING,
+  };
 }
 
 export function restaurantFulfilled(payload) {
   return {
     type: t.RESTAURANT_FULFILLED,
-    payload
-  }
+    payload,
+  };
 }
 
 export function restaurantRejected(errors) {
   return {
     type: t.RESTAURANT_REJECTED,
-    errors
-  }
+    errors,
+  };
 }
 
 export function getRestaurant(slug) {
@@ -30,5 +30,5 @@ export function getRestaurant(slug) {
     return api(URL)
       .then(res => dispatch(restaurantFulfilled(res)))
       .catch(err => dispatch(restaurantRejected(err)));
-  }
+  };
 }

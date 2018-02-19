@@ -1,8 +1,8 @@
 import React from 'react';
-import { func, shape, arrayOf, bool, object } from 'prop-types';
+import { func, arrayOf, bool, object } from 'prop-types';
 import { connect } from 'react-redux';
 
-import { Grid, Row, Col } from '../../components/Layout';
+import { Grid } from '../../components/Layout';
 
 import Hero from './Hero';
 
@@ -15,12 +15,12 @@ export class Home extends React.Component {
   }
 
   render() {
-    const { favorite } = this.props;
+    const { data, loading } = this.props;
 
     return (
       <div className={s.hero}>
         <Grid>
-          <Hero favorite={favorite} />
+          <Hero data={data} loading={loading} />
         </Grid>
       </div>
     );
@@ -28,16 +28,16 @@ export class Home extends React.Component {
 }
 
 Home.propTypes = {
-  favorite: shape({
-    loading: bool.isRequired,
-    data: arrayOf(object).isRequired,
-  }),
+  loading: bool.isRequired,
+  data: arrayOf(object),
   getFavoriteFood: func.isRequired,
 };
 
 const mapStateToProps = ({ favorite }) => {
   return {
-    favorite,
+    data: favorite.data,
+    loading: favorite.loading,
+    errors: favorite.errors,
   };
 };
 
