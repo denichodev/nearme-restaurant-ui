@@ -1,0 +1,40 @@
+.rating {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: 700;
+  padding: 5px 8px;
+  border-radius: 0 10px 0 10px;
+}
+
+.rating.big {
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+.point {
+  font-size: 14px;
+  color: #FFF;
+}
+
+.total {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+.new {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.big .new {
+  font-size: 20px;
+}
+
+.big .point {
+  font-size: 20px;
+}
+
+.big .total {
+  font-size: 14px;
+}

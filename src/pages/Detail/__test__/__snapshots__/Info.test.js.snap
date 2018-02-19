@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Info /> renders correctly 1`] = `
+<div
+  className="detail"
+>
+  <div
+    className="heading"
+  >
+    Detail Info
+  </div>
+  <div
+    className="detailContent"
+  >
+    <div
+      className="detailItem"
+    >
+      <span>
+        Phone Number
+      </span>
+      <span>
+        08980780780
+      </span>
+    </div>
+    <div
+      className="detailItem"
+    >
+      <span>
+        Cuisine
+      </span>
+      <span>
+        Asian
+      </span>
+    </div>
+    <div
+      className="detailItem"
+    >
+      <span>
+        Opening Hours
+      </span>
+      <span>
+        10.00 - 22.00
+      </span>
+    </div>
+    <div
+      className="detailItem"
+    >
+      <span>
+        Address
+      </span>
+      <span>
+        Gandaria City, Lantai Upper Ground, Jl. Sultan Iskandar Muda, Gandaria, Jakarta
+      </span>
+    </div>
+  </div>
+</div>
+`;

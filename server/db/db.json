@@ -1,0 +1,162 @@
+{
+  "food": [
+    {
+      "additionalInfo": [
+        {
+          "status": true,
+          "text": "Take Away"
+        },
+        {
+          "status": true,
+          "text": "Take Away"
+        },
+        {
+          "status": true,
+          "text": "Desert and Bakes"
+        },
+        {
+          "status": true,
+          "text": "Kid Friendly"
+        },
+        {
+          "status": true,
+          "text": "Home Delivery"
+        },
+        {
+          "status": false,
+          "text": "Smoking Area"
+        },
+        {
+          "status": true,
+          "text": "Wi-Fi"
+        },
+        {
+          "status": true,
+          "text": "Outdoor Seating"
+        },
+        {
+          "status": false,
+          "text": "Full Bar"
+        },
+        {
+          "status": false,
+          "text": "Luxury Dining"
+        },
+        {
+          "status": false,
+          "text": "Beer"
+        },
+        {
+          "text": "Wine",
+          "wine": false
+        },
+        {
+          "status": true,
+          "text": "Live Entertainment"
+        },
+        {
+          "status": false,
+          "text": "Praying Room"
+        },
+        {
+          "status": true,
+          "text": "Valet Parking"
+        }
+      ],
+      "address": "Gandaria City, Lantai Upper Ground, Jl. Sultan Iskandar Muda, Gandaria, Jakarta",
+      "cover": "http://localhost:8080/assets/top-momoiro.jpg",
+      "cuisine": "Asian",
+      "id": 1,
+      "location": "Kota Kasablanka, Tebet, Jakarta",
+      "name": "Momoiro",
+      "openingHours": "10.00 - 22.00",
+      "phoneNumber": "08980780780",
+      "rating": 4.2,
+      "slides": [
+        "http://localhost:8080/assets/momoiro-1.jpg",
+        "http://localhost:8080/assets/momoiro-2.jpg",
+        "http://localhost:8080/assets/momoiro-3.jpg"
+      ],
+      "slug": "momoiro-kota-kasablanka"
+    },
+    {
+      "additionalInfo": [
+        {
+          "status": true,
+          "text": "Take Away"
+        },
+        {
+          "status": true,
+          "text": "Take Away"
+        },
+        {
+          "status": true,
+          "text": "Desert and Bakes"
+        },
+        {
+          "status": true,
+          "text": "Kid Friendly"
+        },
+        {
+          "status": true,
+          "text": "Home Delivery"
+        },
+        {
+          "status": false,
+          "text": "Smoking Area"
+        },
+        {
+          "status": true,
+          "text": "Wi-Fi"
+        },
+        {
+          "outdoorSeating": true,
+          "text": "Outdoor Seating"
+        },
+        {
+          "status": false,
+          "text": "Full Bar"
+        },
+        {
+          "status": false,
+          "text": "Luxury Dining"
+        },
+        {
+          "status": false,
+          "text": "Beer"
+        },
+        {
+          "text": "Wine",
+          "wine": false
+        },
+        {
+          "status": true,
+          "text": "Live Entertainment"
+        },
+        {
+          "status": false,
+          "text": "Praying Room"
+        },
+        {
+          "status": true,
+          "text": "Valet Parking"
+        }
+      ],
+      "address": "Gandaria City, Lantai Upper Ground, Jl. Sultan Iskandar Muda, Gandaria, Jakarta",
+      "cover": "http://localhost:8080/assets/top-onokabe.jpg",
+      "cuisine": "Japanase",
+      "id": 2,
+      "location": "Gandaria City Mall, Gandaria, Jakarta",
+      "name": "Onokabe",
+      "openingHours": "10.00 - 22.00",
+      "phoneNumber": "08980780780",
+      "rating": 3.7,
+      "slides": [
+        "http://localhost:8080/assets/onokabe-1.jpg",
+        "http://localhost:8080/assets/onokabe-2.jpg",
+        "http://localhost:8080/assets/onokabe-3.jpg"
+      ],
+      "slug": "onokabe-pluit-junction-mall"
+    }
+  ]
+}

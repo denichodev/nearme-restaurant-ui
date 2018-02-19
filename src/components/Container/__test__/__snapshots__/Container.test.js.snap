@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Container /> renders correctly 1`] = `
+<div
+  id="container"
+>
+  <div
+    className="headerNav"
+  >
+    <Grid
+      className=""
+      fluid={false}
+    >
+      <Row
+        className="headerWrapper"
+      >
+        <div
+          className="logo"
+        >
+          <Link
+            replace={false}
+            to="/"
+          >
+            <i
+              className="fas fa-utensils"
+            />
+          </Link>
+        </div>
+        <nav
+          className="desktopNav"
+        >
+          <ul>
+            <li>
+              <Link
+                replace={false}
+                to="/explore"
+              >
+                Explore
+              </Link>
+            </li>
+            <li>
+              <Link
+                replace={false}
+                to="/me"
+              >
+                Login
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </Row>
+    </Grid>
+  </div>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="/r/:slug"
+    />
+    <Route
+      component={[Function]}
+    />
+  </Switch>
+  <Footer />
+</div>
+`;

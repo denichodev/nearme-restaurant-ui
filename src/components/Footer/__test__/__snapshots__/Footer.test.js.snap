@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> renders correctly 1`] = `
+<footer
+  className="container"
+>
+  <Grid
+    className="desktop"
+    fluid={false}
+  >
+    <Row>
+      <Col
+        xs={12}
+      >
+        <div
+          className="wrapper"
+        >
+          <div
+            className="copyright"
+          >
+            © Aviato.co 2018
+          </div>
+          <div
+            className="menu"
+          >
+            <ul>
+              <li>
+                <Link
+                  replace={false}
+                  to=""
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  replace={false}
+                  to=""
+                >
+                  Terms
+                </Link>
+              </li>
+              <li>
+                <Link
+                  replace={false}
+                  to=""
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </Col>
+    </Row>
+  </Grid>
+  <Grid
+    className="mobile"
+    fluid={false}
+  >
+    <Row>
+      <Col
+        xs={12}
+      >
+        <div
+          className="mobileNav"
+        >
+          <div>
+            <Link
+              replace={false}
+              to="/"
+            >
+              <i
+                className="fas fa-home"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link
+              replace={false}
+              to="/explore"
+            >
+              <i
+                className="fas fa-search"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link
+              replace={false}
+              to="/reserved"
+            >
+              <i
+                className="fas fa-heart"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link
+              replace={false}
+              to="/me"
+            >
+              <i
+                className="fas fa-user"
+              />
+            </Link>
+          </div>
+        </div>
+      </Col>
+    </Row>
+  </Grid>
+</footer>
+`;

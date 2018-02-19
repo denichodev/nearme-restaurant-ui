@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Main /> renders correctly 1`] = `
+<div
+  className="main"
+>
+  <h1>
+    Momoiro
+  </h1>
+  <p />
+  <div
+    className="mainRating"
+    style={
+      Object {
+        "backgroundColor": "#5BA829",
+      }
+    }
+  >
+    <span>
+      4.5
+    </span>
+    <span
+      className="totalRating"
+    >
+      /5
+    </span>
+  </div>
+  <div
+    className="additional"
+  />
+</div>
+`;

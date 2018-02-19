@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Hero /> renders correctly 1`] = `
+<Row>
+  <Col
+    sm={12}
+    xs={12}
+  >
+    <h1
+      className="popularHeading"
+    >
+      Popular
+    </h1>
+  </Col>
+  <Col
+    md={5}
+    sm={12}
+    xs={12}
+  >
+    <div
+      className="top"
+    >
+      <img
+        alt="Momoiro"
+        src="http://localhost:8080/assets/top-momoiro.jpg"
+      />
+      <Link
+        replace={false}
+        to="/r/momoiro-kota-kasablanka"
+      >
+        <div
+          className="wrapper"
+        >
+          <Rating
+            big={true}
+            point={4.2}
+          />
+          <div
+            className="cuisine"
+          >
+            Asian
+          </div>
+          <div
+            className="name"
+          >
+            Momoiro
+          </div>
+          <div
+            className="address"
+          >
+            Kota Kasablanka, Tebet, Jakarta
+          </div>
+        </div>
+      </Link>
+    </div>
+  </Col>
+  <Col
+    md={7}
+    sm={12}
+    xs={12}
+  >
+    <Row />
+  </Col>
+</Row>
+`;

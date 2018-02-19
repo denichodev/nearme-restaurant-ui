@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Rating /> renders correctly 1`] = `
+<div
+  className="rating"
+  style={
+    Object {
+      "backgroundColor": "#5BA829",
+    }
+  }
+>
+  <div>
+    <span
+      className="point"
+    >
+      4.5
+    </span>
+    <span
+      className="total"
+    >
+      /5
+    </span>
+  </div>
+</div>
+`;

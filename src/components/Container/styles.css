@@ -1,0 +1,45 @@
+.headerNav {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .headerNav {
+    display: block;
+    flex-flow: row-wrap;
+    border-bottom: 1px solid #DBDBDB;
+  }
+
+  .headerWrapper {
+    padding: 0 15px;
+    justify-content: space-between;
+  }
+
+  .logo a {
+    display: inline-block;
+    padding: 10px 0;
+    font-size: 30px;
+    color: #BA1E2B;
+  }
+  
+  .desktopNav {
+    width: 500px;
+  }
+
+  .desktopNav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: right;
+  }
+
+  .desktopNav ul li {
+    display: inline-flex;
+  }
+
+  .desktopNav ul li a {
+    display: inline-block;
+    padding: 20px 15px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+}

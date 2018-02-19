@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Detail /> renders correctly 1`] = `
+<div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <body
+      className="detail-page"
+    />
+    <link
+      charset="UTF-8"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </HelmetWrapper>
+  <div
+    className="mobileHeader"
+  >
+    <div
+      className="backButton"
+    >
+      <button
+        onClick={[MockFunction]}
+      >
+        <i
+          className="fas fa-angle-left"
+        />
+      </button>
+    </div>
+  </div>
+  <Carousel
+    className="slickSlider"
+  >
+    <div
+      key="0"
+    >
+      <img
+        alt="test"
+        src="http://localhost:8080/assets/momoiro-1.jpg"
+      />
+    </div>
+    <div
+      key="1"
+    >
+      <img
+        alt="test"
+        src="http://localhost:8080/assets/momoiro-2.jpg"
+      />
+    </div>
+    <div
+      key="2"
+    >
+      <img
+        alt="test"
+        src="http://localhost:8080/assets/momoiro-3.jpg"
+      />
+    </div>
+  </Carousel>
+  <Grid
+    className="detailPage"
+    fluid={false}
+  >
+    <Row>
+      <Col
+        md={8}
+        sm={12}
+        xs={12}
+      >
+        <div
+          className="wrapper"
+        >
+          <Main
+            additionalInfo={Array []}
+            cuisine="Asian"
+            name="Momoiro"
+            rating={4.2}
+          />
+          <Info
+            address="Gandaria City, Lantai Upper Ground, Jl. Sultan Iskandar Muda, Gandaria, Jakarta"
+            cuisine="Asian"
+            openingHours="10.00 - 22.00"
+            phoneNumber="08980780780"
+          />
+        </div>
+      </Col>
+      <Col
+        md={4}
+        sm={12}
+        xs={12}
+      >
+        <aside>
+          <div
+            className="sidebar"
+          >
+            <button
+              className="close"
+              onClick={[Function]}
+            >
+              <i
+                className="fas fa-times"
+              />
+            </button>
+            <div
+              className="form"
+            >
+              <Component
+                className=""
+                closeOnSelect={false}
+                closeOnTab={true}
+                dateFormat={true}
+                defaultValue=""
+                input={false}
+                inputProps={
+                  Object {
+                    "placeholder": "Select date and time...",
+                  }
+                }
+                isValidDate={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onViewModeChange={[Function]}
+                strictParsing={true}
+                timeConstraints={Object {}}
+                timeFormat={true}
+                utc={false}
+              />
+            </div>
+            <div
+              className="form"
+            >
+              <input
+                onChange={[Function]}
+                placeholder="Total guest..."
+                type="number"
+              />
+              <div
+                className="person"
+              >
+                 person
+              </div>
+            </div>
+            <div
+              className="form"
+            >
+              <button
+                className="reserve"
+                onClick={[Function]}
+              >
+                Make a reservation
+              </button>
+            </div>
+          </div>
+        </aside>
+        <div
+          className="footerBookBtn"
+        >
+          <button
+            onClick={[Function]}
+          >
+            Make a reservation
+          </button>
+        </div>
+      </Col>
+    </Row>
+  </Grid>
+</div>
+`;
